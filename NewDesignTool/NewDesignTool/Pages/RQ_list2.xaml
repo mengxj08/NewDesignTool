@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="NewDesignTool.Pages.RQ_list2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Canvas x:Name="canvas_RQ2">
+            <Label Content="Experiment Name:" Canvas.Top="10" Height="24" Width="117"/>
+            <Label Content="Author:" Canvas.Top="76" Height="24" Width="107"/>
+            <Label Content="Description:" Canvas.Top="144" Height="24" Width="107"/>
+            <TextBox x:Name="RQ_experimentTitle" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="10" Text="{Binding Path=researchQuestion.experimentTitle, Mode=TwoWay}"/>
+            <TextBox x:Name="RQ_experimentConductor" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="144" Text="{Binding Path=researchQuestion.experimentConductor,Mode=TwoWay}"/>
+            <TextBox x:Name="RQ_experimentDescription" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="76" Text="{Binding Path=researchQuestion.experimentDescription,Mode=TwoWay}"/>
+        </Canvas>
+    </Grid>
+</UserControl>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="NewDesignTool.Pages.RQ_list3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Canvas x:Name="canvas_RQ3">
+            <ListBox x:Name="compareSolutions" Height="26" Canvas.Left="10" Canvas.Top="93" Width="184" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Path=compareSolutions,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+            <ListBox x:Name="tasks" Height="26" Canvas.Left="10" Canvas.Top="167" Width="184" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding tasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <ListBox x:Name="measures" Height="26" Canvas.Left="10" Canvas.Top="306" Width="184" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding measures, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Canvas.Left="209" TextWrapping="Wrap" Text="is better than" Canvas.Top="27" Width="111" Height="26" Style="{StaticResource Heading2}" />
+            <TextBlock Canvas.Left="209" TextWrapping="Wrap" Text="in" Canvas.Top="93" Width="111" Height="26" Style="{StaticResource Heading2}" />
+            <TextBlock Canvas.Left="209" TextWrapping="Wrap" Text="under" Canvas.Top="167" Width="111" Height="26" Style="{StaticResource Heading2}" />
+            <TextBlock Canvas.Left="209" TextWrapping="Wrap" Text="based on" Canvas.Top="233" Width="111" Height="26" Style="{StaticResource Heading2}" RenderTransformOrigin="0.505,3.423" />
+            <Button Canvas.Left="298" Canvas.Top="420" Width="127" Height="26" Click="Item_Del" Content="Deleting Item"/>
+            <TextBox x:Name="Addtext" Height="26" Canvas.Left="136" TextWrapping="Wrap" Canvas.Top="420" Width="93"/>
+            <Button Canvas.Left="10" Canvas.Top="420" Width="105" Height="26" Click="Item_Add" Content="Adding Item" RenderTransformOrigin="-1.134,0.846"/>
+
+            <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="184" RenderTransformOrigin="0.092,0.304"/>
+            <TextBox x:Name="context" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="233" Width="184" RenderTransformOrigin="0.092,0.304"/>
+            
+            <CheckBox x:Name="checkbox1" Canvas.Left="423" Canvas.Top="93" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox1_checked"/>
+            <CheckBox x:Name="checkbox2" Canvas.Left="423" Canvas.Top="167" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked"/>
+            <CheckBox x:Name="checkbox3" Canvas.Left="423" Canvas.Top="306" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox3_checked"/>
+        </Canvas>
+    </Grid>
+</UserControl>
