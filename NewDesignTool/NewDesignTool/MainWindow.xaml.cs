@@ -35,40 +35,7 @@ namespace NewDesignTool
         {
            modeType = MODE.NewItem;
 
-           //Indpedent variables
-           datas.independentVariables.Add(new IndependentVariable());
-           datas.independentVariables.Add(new IndependentVariable());
-           datas.independentVariables.Add(new IndependentVariable());
-
-           datas.independentVariables[0].subjectDesign = SUBJECTDESIGN.Between;
-           datas.independentVariables[1].subjectDesign = SUBJECTDESIGN.Between;
-           datas.independentVariables[2].subjectDesign = SUBJECTDESIGN.Between;
-
-           datas.independentVariables[0].counterBalance = COUNTERBALANCE.LatinSquare;
-           datas.independentVariables[1].counterBalance = COUNTERBALANCE.LatinSquare;
-           datas.independentVariables[2].counterBalance = COUNTERBALANCE.LatinSquare;
-
-           datas.independentVariables[0].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[0].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[0].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[0].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[1].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[1].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[1].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[1].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[2].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[2].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[2].levels.Add(new IndependentVariable.Level());
-           datas.independentVariables[2].levels.Add(new IndependentVariable.Level());
-
-           datas.independentVariables[0].levels[0].value = datas.researchQuestion.hypothesis.mainSolution;
-           datas.independentVariables[0].levels[1].value = datas.researchQuestion.hypothesis.compareSolutions[0];
-
-           datas.independentVariables[1].levels[0].value = datas.researchQuestion.hypothesis.context;
-           datas.independentVariables[1].levels[1].value = "Quiet environment";
-
-           datas.independentVariables[2].levels[0].value = datas.researchQuestion.hypothesis.tasks[0];
-           datas.independentVariables[2].levels[1].value = "Multi Tasks";
+          
 
             //Dependent
            datas.dependentVariables.Add(new DependentVariable());

@@ -86,7 +86,7 @@ namespace NewDesignTool
                 XmlNodeList levelsNodeList = levelsNode.SelectNodes("level");
                 foreach (XmlNode node in levelsNodeList)
                 {
-                    IndependentVariable.Level level = new IndependentVariable.Level();
+                    Level level = new Level();
                     level.id = Int32.Parse(node.SelectSingleNode("id").InnerText);
                     level.value = node.SelectSingleNode("value").InnerText;
                     iv.levels.Add(level);
@@ -185,7 +185,7 @@ namespace NewDesignTool
                     writer.WriteElementString("name", independentVariable.name);
                     writer.WriteElementString("subject_design", independentVariable.subjectDesign.ToString());
                     writer.WriteStartElement("levels");
-                    foreach (IndependentVariable.Level level in independentVariable.levels)
+                    foreach (Level level in independentVariable.levels)
                     {
                         writer.WriteStartElement("level");
                         writer.WriteElementString("id", level.id.ToString());
@@ -363,27 +363,6 @@ namespace NewDesignTool
         {
             levels = new List<Level>();
         }
-
-        public class Level : ViewModelBase
-        {
-            public int id{ get; set;}
-            private string _value;
-            public string value
-            {
-                get
-                {
-                    return this._value;
-                }
-                set
-                {
-                    if (value != this.value)
-                    {
-                        this._value = value;
-                        this.onPropertyChanged("value");
-                    }
-                }
-            }
-        }
     }
 
     public class DependentVariable : ViewModelBase
@@ -405,7 +384,26 @@ namespace NewDesignTool
             }
         }
     }
-
+    public class Level : ViewModelBase
+    {
+        public int id { get; set; }
+        private string _value;
+        public string value
+        {
+            get
+            {
+                return this._value;
+            }
+            set
+            {
+                if (value != this.value)
+                {
+                    this._value = value;
+                    this.onPropertyChanged("value");
+                }
+            }
+        }
+    }
     public class ControlVariable
     {
     }

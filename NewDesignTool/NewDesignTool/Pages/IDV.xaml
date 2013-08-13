@@ -4,12 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:local="clr-namespace:NewDesignTool"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}">
-        <mui:ModernMenu x:Name="mMenu1" >
-            
-        </mui:ModernMenu>
+        <TreeView Name="tv" ItemsSource="{Binding}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=levels}">
+                    <Border BorderBrush="BurlyWood" BorderThickness="1">
+                        <TextBlock Text="{Binding Path=value}" />
+                    </Border>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </Grid>
 
 </UserControl>
