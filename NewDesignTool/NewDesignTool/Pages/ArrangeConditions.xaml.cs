@@ -23,6 +23,12 @@ namespace NewDesignTool.Pages
         public ArrangeConditions()
         {
             InitializeComponent();
+            bindingProcess();
+        }
+        private void bindingProcess()
+        {
+            datagrid.DataContext = NewDesignTool.MainWindow.datas.independentVariables;
+           
         }
     }
 }

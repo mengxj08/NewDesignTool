@@ -34,17 +34,6 @@ namespace NewDesignTool
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
            modeType = MODE.NewItem;
-
-
-
-           //arrangement
-           datas.arrangement.minNum = 8;
-           datas.arrangement.actualNum = 12;
-           datas.arrangement.trial = 3;
-           datas.arrangement.block = 2;
-           datas.arrangement.timePerTrial = 30;
-           datas.arrangement.feePerParticipant = 10;
-
            BindingProcess();   
         }
         private void BindingProcess()
