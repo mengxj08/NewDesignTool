@@ -35,8 +35,6 @@ namespace NewDesignTool
         {
            modeType = MODE.NewItem;
 
-          
-
             //Dependent
            datas.dependentVariables.Add(new DependentVariable());
            datas.dependentVariables.Add(new DependentVariable());

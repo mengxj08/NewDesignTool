@@ -7,16 +7,17 @@
              xmlns:local="clr-namespace:NewDesignTool"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
-    <Grid Style="{StaticResource ContentRoot}">
+    <Grid Style="{StaticResource ContentRoot}" Margin="16,28,16,55">
         <TreeView Name="tv" ItemsSource="{Binding}">
             <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Path=levels}">
-                    <Border BorderBrush="BurlyWood" BorderThickness="1">
-                        <TextBlock Text="{Binding Path=value}" />
-                    </Border>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=levels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                    <TextBlock Text="{Binding Path=name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
+        <Button Content="Delete Item" HorizontalAlignment="Left" Height="46" Margin="23,422,0,-51" VerticalAlignment="Top" Width="101" Click="del_item"/>
+
+
     </Grid>
 
 </UserControl>

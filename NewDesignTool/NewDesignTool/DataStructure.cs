@@ -86,9 +86,9 @@ namespace NewDesignTool
                 XmlNodeList levelsNodeList = levelsNode.SelectNodes("level");
                 foreach (XmlNode node in levelsNodeList)
                 {
-                    Level level = new Level();
+                    IndependentVariable.Level level = new IndependentVariable.Level();
                     level.id = Int32.Parse(node.SelectSingleNode("id").InnerText);
-                    level.value = node.SelectSingleNode("value").InnerText;
+                    level.name = node.SelectSingleNode("value").InnerText;
                     iv.levels.Add(level);
                 }
                 iv.counterBalance = (COUNTERBALANCE)Enum.Parse(typeof(COUNTERBALANCE), ivNode.SelectSingleNode("counter_balance").InnerText, true);
@@ -185,11 +185,11 @@ namespace NewDesignTool
                     writer.WriteElementString("name", independentVariable.name);
                     writer.WriteElementString("subject_design", independentVariable.subjectDesign.ToString());
                     writer.WriteStartElement("levels");
-                    foreach (Level level in independentVariable.levels)
+                    foreach (IndependentVariable.Level level in independentVariable.levels)
                     {
                         writer.WriteStartElement("level");
                         writer.WriteElementString("id", level.id.ToString());
-                        writer.WriteElementString("value", level.value);
+                        writer.WriteElementString("value", level.name);
                         writer.WriteEndElement();
                     }
                     writer.WriteEndElement();
@@ -363,6 +363,26 @@ namespace NewDesignTool
         {
             levels = new List<Level>();
         }
+        public class Level : ViewModelBase
+        {
+            public int id { get; set; }
+            private string _name;
+            public string name
+            {
+                get
+                {
+                    return this._name;
+                }
+                set
+                {
+                    if (value != this.name)
+                    {
+                        this._name = value;
+                        this.onPropertyChanged("name");
+                    }
+                }
+            }
+        }
     }
 
     public class DependentVariable : ViewModelBase
@@ -384,26 +404,7 @@ namespace NewDesignTool
             }
         }
     }
-    public class Level : ViewModelBase
-    {
-        public int id { get; set; }
-        private string _value;
-        public string value
-        {
-            get
-            {
-                return this._value;
-            }
-            set
-            {
-                if (value != this.value)
-                {
-                    this._value = value;
-                    this.onPropertyChanged("value");
-                }
-            }
-        }
-    }
+
     public class ControlVariable
     {
     }
