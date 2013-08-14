@@ -9,21 +9,15 @@
       <main_solution></main_solution>
       <compare_solutions>
         <compare_solution>
-          <id></id>
-          <name></name>
         </compare_solution>
       </compare_solutions>
       <tasks>
         <task>
-          <id></id>
-          <name></name>
         </task>
       </tasks>
       <context></context>
       <measures>
         <measure>
-          <id></id>
-          <name></name>
         </measure>
       </measures>
       <target_population></target_population>
@@ -35,8 +29,7 @@
       <subject_design></subject_design>  <!-- between or within -->
       <levels>
         <level>
-          <id></id>
-          <value></value>
+          <name></name>
         </level>
       </levels>
       <counter_balance></counter_balance>  <!-- None, Latin Square, and fully counter balance -->

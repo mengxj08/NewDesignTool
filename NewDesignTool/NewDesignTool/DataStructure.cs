@@ -13,16 +13,16 @@ namespace NewDesignTool
 
         public ResearchQuestion researchQuestion { get; set; }
         public Arrangement arrangement { get; set; }
-        public List<IndependentVariable> independentVariables { get; set; }
-        public List<DependentVariable> dependentVariables { get; set; }
+        public ObservableCollection<IndependentVariable> independentVariables { get; set; }
+        public ObservableCollection<DependentVariable> dependentVariables { get; set; }
 
 
         public DataStructure()
         {
             researchQuestion = new ResearchQuestion();
             arrangement = new Arrangement();
-            independentVariables = new List<IndependentVariable>();
-            dependentVariables = new List<DependentVariable>();
+            independentVariables = new ObservableCollection<IndependentVariable>();
+            dependentVariables = new ObservableCollection<DependentVariable>();
         }
 
         // Construct from an existing xml file.
@@ -43,7 +43,7 @@ namespace NewDesignTool
             XmlNodeList compareSolutionsNodeList = compareSolutionsNode.SelectNodes("compare_solution");
             foreach (XmlNode node in compareSolutionsNodeList)
             {
-                string compareSolution = node.SelectSingleNode("name").InnerText;
+                string compareSolution = node.InnerText;
                 //compareSolution.id = Int32.Parse(node.SelectSingleNode("id").InnerText);
                 //compareSolution.name = node.SelectSingleNode("name").InnerText;
                 researchQuestion.hypothesis.compareSolutions.Add(compareSolution);
@@ -53,7 +53,7 @@ namespace NewDesignTool
             XmlNodeList tasksNodeList = tasksNode.SelectNodes("task");
             foreach (XmlNode node in tasksNodeList)
             {
-                string task = node.SelectSingleNode("name").InnerText;
+                string task = node.InnerText;
                 //task.id = Int32.Parse(node.SelectSingleNode("id").InnerText);
                 //task.name = node.SelectSingleNode("name").InnerText;
                 researchQuestion.hypothesis.tasks.Add(task);
@@ -65,7 +65,7 @@ namespace NewDesignTool
             XmlNodeList measuresNodeList = measuresNode.SelectNodes("measure");
             foreach (XmlNode node in measuresNodeList)
             {
-                string measure = node.SelectSingleNode("name").InnerText;
+                string measure = node.InnerText;
                 //measure.id = Int32.Parse(node.SelectSingleNode("id").InnerText);
                 //measure.name = node.SelectSingleNode("name").InnerText;
                 researchQuestion.hypothesis.measures.Add(measure);
@@ -87,8 +87,8 @@ namespace NewDesignTool
                 foreach (XmlNode node in levelsNodeList)
                 {
                     IndependentVariable.Level level = new IndependentVariable.Level();
-                    level.id = Int32.Parse(node.SelectSingleNode("id").InnerText);
-                    level.name = node.SelectSingleNode("value").InnerText;
+                    //level.id = Int32.Parse(node.SelectSingleNode("id").InnerText);
+                    level.name = node.SelectSingleNode("name").InnerText;
                     iv.levels.Add(level);
                 }
                 iv.counterBalance = (COUNTERBALANCE)Enum.Parse(typeof(COUNTERBALANCE), ivNode.SelectSingleNode("counter_balance").InnerText, true);
@@ -143,29 +143,32 @@ namespace NewDesignTool
                 writer.WriteStartElement("compare_solutions");
                 foreach (String compareSolution in researchQuestion.hypothesis.compareSolutions)
                 {
-                    writer.WriteStartElement("compare_solution");
+                    //writer.WriteStartElement("compare_solution");
                     //writer.WriteElementString("id", compareSolution.id.ToString());
-                    writer.WriteElementString("name", compareSolution);
-                    writer.WriteEndElement();
+                    //writer.WriteElementString("name", compareSolution);
+                    //writer.WriteEndElement();
+                    writer.WriteElementString("compare_solution", compareSolution);
                 }
                 writer.WriteEndElement();
                 writer.WriteStartElement("tasks");
                 foreach (string task in researchQuestion.hypothesis.tasks)
                 {
-                    writer.WriteStartElement("task");
-                   // writer.WriteElementString("id", task.id.ToString());
-                    writer.WriteElementString("name", task);
-                    writer.WriteEndElement();
+                    //writer.WriteStartElement("task");
+                    //writer.WriteElementString("id", task.id.ToString());
+                    //writer.WriteElementString("name", task);
+                    //writer.WriteEndElement();
+                    writer.WriteElementString("task", task);
                 }
                 writer.WriteEndElement();
                 writer.WriteElementString("context", researchQuestion.hypothesis.context);
                 writer.WriteStartElement("measures");
                 foreach (string measure in researchQuestion.hypothesis.measures)
                 {
-                    writer.WriteStartElement("measure");
+                    //writer.WriteStartElement("measure");
                     //writer.WriteElementString("id", measure.id.ToString());
-                    writer.WriteElementString("name", measure);
-                    writer.WriteEndElement();
+                    //writer.WriteElementString("name", measure);
+                    //writer.WriteEndElement();
+                    writer.WriteElementString("measure", measure);
                 }
                 writer.WriteEndElement();
                 writer.WriteElementString("target_population", researchQuestion.hypothesis.targetPopulation);
@@ -188,8 +191,8 @@ namespace NewDesignTool
                     foreach (IndependentVariable.Level level in independentVariable.levels)
                     {
                         writer.WriteStartElement("level");
-                        writer.WriteElementString("id", level.id.ToString());
-                        writer.WriteElementString("value", level.name);
+                        //writer.WriteElementString("id", level.id.ToString());
+                        writer.WriteElementString("name", level.name);
                         writer.WriteEndElement();
                     }
                     writer.WriteEndElement();
@@ -357,15 +360,14 @@ namespace NewDesignTool
         public string name { get; set; }
         public SUBJECTDESIGN subjectDesign{ get; set;}
         public COUNTERBALANCE counterBalance{ get; set;}
-        public List<Level> levels { get; set; }
+        public ObservableCollection<Level> levels { get; set; }
 
         public IndependentVariable()
         {
-            levels = new List<Level>();
+            levels = new ObservableCollection<Level>();
         }
         public class Level : ViewModelBase
         {
-            public int id { get; set; }
             private string _name;
             public string name
             {
@@ -493,10 +495,10 @@ namespace NewDesignTool
 
         public int totalTimeCost { get; set; }
         public int totalPayment { get; set; }
-        public List<Participant> participants { get; set; }
+        public ObservableCollection<Participant> participants { get; set; }
         public Arrangement()
         {
-            participants = new List<Participant>();
+            participants = new ObservableCollection<Participant>();
         }
         public class Participant
         {
