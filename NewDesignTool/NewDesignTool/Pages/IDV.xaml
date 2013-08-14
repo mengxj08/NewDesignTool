@@ -7,17 +7,17 @@
              xmlns:local="clr-namespace:NewDesignTool"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
-    <Grid Style="{StaticResource ContentRoot}" Margin="16,28,16,55">
-        <TreeView Name="tv" ItemsSource="{Binding}">
+    <Grid Style="{StaticResource ContentRoot}" Margin="16,28,16,10">
+        <TreeView Name="tv" ItemsSource="{Binding}" Margin="0,0,0,77">
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Path=levels,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                     <TextBlock Text="{Binding Path=name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
-        <Button Content="Delete Item" HorizontalAlignment="Left" Height="46" Margin="23,422,0,-51" VerticalAlignment="Top" Width="101" Click="del_item"/>
-
-
+        <Button Content="Delete Item" HorizontalAlignment="Left" Height="27" Margin="357,390,0,0" VerticalAlignment="Top" Width="101" Click="del_item" RenderTransformOrigin="0.198,0.447"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="128,390,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Add Item" HorizontalAlignment="Left" Height="27" Margin="10,390,0,0" VerticalAlignment="Top" Width="101" Click="add_item" RenderTransformOrigin="0.198,0.447"/>
     </Grid>
 
 </UserControl>

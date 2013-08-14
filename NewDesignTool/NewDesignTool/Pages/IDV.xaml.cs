@@ -73,12 +73,32 @@ namespace NewDesignTool.Pages
         {
             if (tv.SelectedItem != null)
             {
-                Log.getLogInstance().writeLog(tv.Items.IndexOf(tv.SelectedItem).ToString());
+                Log.getLogInstance().writeLog((tv.Items.IndexOf(tv.SelectedItem)).ToString());
+               
                 if (tv.Items.IndexOf(tv.SelectedItem) != -1)
                 {
                     NewDesignTool.MainWindow.datas.independentVariables.RemoveAt(tv.Items.IndexOf(tv.SelectedItem));
+                    return;
+                }
+                else
+                {/*
+                    NewDesignTool.IndependentVariable.Level tt = (NewDesignTool.IndependentVariable.Level) tv.SelectedItem;
+                    foreach(NewDesignTool.IndependentVariable temp in NewDesignTool.MainWindow.datas.independentVariables)
+                    {
+                        if (temp.levels.Contains(tt))
+                        {
+                            Log.getLogInstance().writeLog("second");
+                            temp.levels.Remove(tt);
+                        }
+                        
+                    }
+                    */
                 }
             }
+        }
+        private void add_item(object sender,RoutedEventArgs e)
+        { 
+
         }
 
     }
