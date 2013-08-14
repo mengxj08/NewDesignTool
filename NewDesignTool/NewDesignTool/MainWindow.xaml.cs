@@ -24,7 +24,7 @@ namespace NewDesignTool
    
     public partial class MainWindow : ModernWindow
     {
-        //static public DataStructure datas = new DataStructure();
+        static public DataStructure datas = new DataStructure();
         static public DataStructure datas;
         private MODE modeType;
         private Boolean FLAG = true;
