@@ -6,12 +6,17 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
-    <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
-            <StackPanel MinWidth="200">
-                <TextBlock Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="Content goes here" />
-            </StackPanel>
-        </ScrollViewer>
+    <Grid Style="{StaticResource ContentRoot}" Margin="16,28,16,10">
+        <TreeView Name="tv" Margin="0,50,0,100" ItemsSource="{Binding}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding}">
+                    <TextBlock Text="{Binding Path=name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <Button Content="Delete Item" HorizontalAlignment="Left" Height="27" Margin="357,367,0,0" VerticalAlignment="Top" Width="101" Click="del_item" RenderTransformOrigin="0.198,0.447"/>
+        <TextBox x:Name="addItemText" HorizontalAlignment="Left" Height="27" Margin="134,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Add Item" HorizontalAlignment="Left" Height="27" Margin="10,367,0,0" VerticalAlignment="Top" Width="101" Click="add_item" RenderTransformOrigin="0.198,0.447"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,10,0,0" TextWrapping="Wrap" Text="Dependent Variables" VerticalAlignment="Top" Height="35" Width="288" Style="{StaticResource Heading2}"/>
     </Grid>
 </UserControl>

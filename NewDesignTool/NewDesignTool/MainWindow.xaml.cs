@@ -35,11 +35,7 @@ namespace NewDesignTool
         {
            modeType = MODE.NewItem;
 
-            //Dependent
-           datas.dependentVariables.Add(new DependentVariable());
-           datas.dependentVariables.Add(new DependentVariable());
-           datas.dependentVariables.Add(new DependentVariable());
-           datas.dependentVariables[0].name = datas.researchQuestion.hypothesis.measures[0];
+
 
            //arrangement
            datas.arrangement.minNum = 8;

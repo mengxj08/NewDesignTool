@@ -23,6 +23,35 @@ namespace NewDesignTool.Pages
         public DV()
         {
             InitializeComponent();
+            //Dependent
+            NewDesignTool.DependentVariable temp1 = new NewDesignTool.DependentVariable();
+            temp1.name = "time cost";
+            NewDesignTool.DependentVariable temp2 = new NewDesignTool.DependentVariable();
+            temp2.name = "money cost";
+            NewDesignTool.MainWindow.datas.dependentVariables.Add(temp1);
+            NewDesignTool.MainWindow.datas.dependentVariables.Add(temp2);
+            bindingProcess();
+        }
+        private void bindingProcess()
+        {
+            tv.DataContext = NewDesignTool.MainWindow.datas.dependentVariables;
+        }
+        private void add_item(object sender, RoutedEventArgs e)
+        {
+            if (addItemText.Text != "")
+            {
+                NewDesignTool.DependentVariable dv = new NewDesignTool.DependentVariable();
+                dv.name = addItemText.Text;
+                NewDesignTool.MainWindow.datas.dependentVariables.Add(dv);
+            }
+        }
+        private void del_item(object sender, RoutedEventArgs e)
+        {
+            if (tv.SelectedItem != null)
+            {
+                NewDesignTool.DependentVariable dv = (NewDesignTool.DependentVariable) tv.SelectedItem;
+                NewDesignTool.MainWindow.datas.dependentVariables.Remove(dv);
+            }
         }
     }
 }
