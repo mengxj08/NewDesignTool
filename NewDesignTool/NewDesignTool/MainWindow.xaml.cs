@@ -20,11 +20,12 @@ namespace NewDesignTool
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    public enum MODE { NewItem, CopyItem };
+    public enum MODE { NewItem, OpenItem };
    
     public partial class MainWindow : ModernWindow
     {
-        static public DataStructure datas = new DataStructure();
+        //static public DataStructure datas = new DataStructure();
+        static public DataStructure datas;
         private MODE modeType;
         private Boolean FLAG = true;
         public MainWindow()
@@ -35,19 +36,19 @@ namespace NewDesignTool
         {
            modeType = MODE.NewItem;
 
-            //Dependent
-           datas.dependentVariables.Add(new DependentVariable());
-           datas.dependentVariables.Add(new DependentVariable());
-           datas.dependentVariables.Add(new DependentVariable());
-           datas.dependentVariables[0].name = datas.researchQuestion.hypothesis.measures[0];
+           // //Dependent
+           //datas.dependentVariables.Add(new DependentVariable());
+           //datas.dependentVariables.Add(new DependentVariable());
+           //datas.dependentVariables.Add(new DependentVariable());
+           //datas.dependentVariables[0].name = datas.researchQuestion.hypothesis.measures[0];
 
-           //arrangement
-           datas.arrangement.minNum = 8;
-           datas.arrangement.actualNum = 12;
-           datas.arrangement.trial = 3;
-           datas.arrangement.block = 2;
-           datas.arrangement.timePerTrial = 30;
-           datas.arrangement.feePerParticipant = 10;
+           ////arrangement
+           //datas.arrangement.minNum = 8;
+           //datas.arrangement.actualNum = 12;
+           //datas.arrangement.trial = 3;
+           //datas.arrangement.block = 2;
+           //datas.arrangement.timePerTrial = 30;
+           //datas.arrangement.feePerParticipant = 10;
 
            BindingProcess();   
         }
