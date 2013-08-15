@@ -19,8 +19,8 @@
             <TextBox x:Name="Addtext" Height="26" Canvas.Left="136" TextWrapping="Wrap" Canvas.Top="420" Width="93"/>
             <Button Canvas.Left="10" Canvas.Top="420" Width="105" Height="26" Click="Item_Add" Content="Adding Item" RenderTransformOrigin="-1.134,0.846"/>
 
-            <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="184" RenderTransformOrigin="0.092,0.304"/>
-            <TextBox x:Name="context" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="233" Width="184" RenderTransformOrigin="0.092,0.304"/>
+            <TextBox x:Name="mainSolution" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="27" Width="184" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=mainSolution, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="context" Height="26" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="233" Width="184" RenderTransformOrigin="0.092,0.304" Text="{Binding Path=context, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             
             <CheckBox x:Name="checkbox1" Canvas.Left="423" Canvas.Top="93" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox1_checked"/>
             <CheckBox x:Name="checkbox2" Canvas.Left="423" Canvas.Top="167" Width="21" RenderTransformOrigin="0.333,4.941" Checked="checkbox2_checked"/>

@@ -7,11 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}">
-        <Button x:Name="appbar_box_layered"  Margin="34,10,368,403">
-            <Path Width="20" Height="20" Stretch="Fill" Fill="#FF000000" Data="F1 M 38,15.8334L 58.5833,23.75L 58.5833,30.0833L 38,38L 17.4167,30.0833L 17.4166,23.75L 38,15.8334 Z M 58.5833,44.3333L 58.5833,52.25L 38,60.1667L 17.4167,52.25L 17.4167,44.3333L 21.5333,45.9167L 38,52.25L 54.4667,45.9167L 58.5833,44.3333 Z M 58.5833,33.25L 58.5833,41.1667L 38,49.0833L 17.4167,41.1667L 17.4167,33.25L 21.5333,34.8333L 38,41.1667L 54.4666,34.8333L 58.5833,33.25 Z "/>
-        </Button>
-        <Canvas x:Name="appbar_add" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0" Margin="196,190,234,227">
-            <Path Width="38" Height="38" Stretch="Fill" Fill="#FF000000" Data="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z "/>
-        </Canvas>
+        
     </Grid>
 </UserControl>
