@@ -24,12 +24,12 @@ namespace NewDesignTool.Pages
         {
             InitializeComponent();
             //Dependent
-            NewDesignTool.DependentVariable temp1 = new NewDesignTool.DependentVariable();
-            temp1.name = "time cost";
-            NewDesignTool.DependentVariable temp2 = new NewDesignTool.DependentVariable();
-            temp2.name = "money cost";
-            NewDesignTool.MainWindow.datas.dependentVariables.Add(temp1);
-            NewDesignTool.MainWindow.datas.dependentVariables.Add(temp2);
+            //NewDesignTool.DependentVariable temp1 = new NewDesignTool.DependentVariable();
+            //temp1.name = "time cost";
+            //NewDesignTool.DependentVariable temp2 = new NewDesignTool.DependentVariable();
+            //temp2.name = "money cost";
+            //NewDesignTool.MainWindow.datas.dependentVariables.Add(temp1);
+            //NewDesignTool.MainWindow.datas.dependentVariables.Add(temp2);
             bindingProcess();
         }
         private void bindingProcess()

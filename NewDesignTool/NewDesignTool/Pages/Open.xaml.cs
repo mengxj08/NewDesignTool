@@ -37,15 +37,15 @@ namespace NewDesignTool.Pages
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                try
-                {
-                    NewDesignTool.MainWindow.datas = new DataStructure(dialog.FileName);
+                //try
+                //{
+                    NewDesignTool.MainWindow.datas.ReadFromFile(dialog.FileName);
                     //Log.getLogInstance().writeLog(dialog.FileName);
-                }
-                catch (Exception ex)
-                {
-                    Log.getLogInstance().writeLog("Error: Could not read file from disk. Original error: " + ex.Message);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    Log.getLogInstance().writeLog("Error: Could not read file from disk. Original error: " + ex.Message);
+                //}
             }
         }
     }

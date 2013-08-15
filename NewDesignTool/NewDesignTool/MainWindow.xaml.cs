@@ -35,7 +35,7 @@ namespace NewDesignTool
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
            modeType = MODE.NewItem;
-           BindingProcess();   
+           BindingProcess();
         }
         private void BindingProcess()
         { 
