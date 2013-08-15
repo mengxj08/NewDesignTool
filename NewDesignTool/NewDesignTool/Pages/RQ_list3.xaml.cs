@@ -20,18 +20,12 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class RQ_list3 : UserControl
     {
+        public static bool RQL3_PAGE_FLAG = false;
+
         public RQ_list3()
         {
             InitializeComponent();
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.mainSolution = "earPod";
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.context = "Noisy environment";
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.compareSolutions.Add("ipod");
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.compareSolutions.Add("NewPod");
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.tasks.Add("Single tasks");
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.tasks.Add("Multi tasks");
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.tasks.Add("simple tasks");
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.measures.Add("Time cost");
-            //NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.measures.Add("Money");
+
             BindingProcess();
         }
         private void BindingProcess()
@@ -95,6 +89,15 @@ namespace NewDesignTool.Pages
         {
             checkbox1.IsChecked = false;
             checkbox2.IsChecked = false;
+        }
+
+        private void RQL3Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (RQL3_PAGE_FLAG)
+            {
+                BindingProcess();
+                RQL3_PAGE_FLAG = false;
+            }
         }
     }
 }

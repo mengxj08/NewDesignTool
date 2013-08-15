@@ -29,6 +29,8 @@ namespace NewDesignTool
         // Construct from an existing xml file.
         public void ReadFromFile(String path)
         {
+            Clear();
+
             XmlDocument doc = new XmlDocument();
             doc.Load(path);
 
@@ -94,6 +96,7 @@ namespace NewDesignTool
                 iv.counterBalance = (COUNTERBALANCE)Enum.Parse(typeof(COUNTERBALANCE), ivNode.SelectSingleNode("counter_balance").InnerText, true);
                 independentVariables.Add(iv);
             }
+            Log.getLogInstance().writeLog(independentVariables.Count.ToString());
             XmlNodeList dvNodeList = variablesNode.SelectNodes("dependent_variable");
             foreach (XmlNode node in dvNodeList)
             {
@@ -122,6 +125,14 @@ namespace NewDesignTool
                 arrangement.participants.Add(participant);
             }
             // End of Initiating arrangement.
+        }
+
+        private void Clear()
+        {
+            researchQuestion = new ResearchQuestion();
+            arrangement = new Arrangement();
+            independentVariables = new ObservableCollection<IndependentVariable>();
+            dependentVariables = new ObservableCollection<DependentVariable>();
         }
 
         // Store to an xml file.

@@ -7,7 +7,8 @@
              xmlns:local="clr-namespace:NewDesignTool"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="500"
-             Loaded="IDV_PageLoaded">
+             Loaded="IDVWindow_Loaded">
+
     <Grid Style="{StaticResource ContentRoot}" Margin="16,28,16,10">
         <TextBlock HorizontalAlignment="Left" Margin="21,10,0,0" TextWrapping="Wrap" Text="Independent Variables" VerticalAlignment="Top" Height="35" Width="288" Style="{StaticResource Heading2}"/>
         <TreeView Name="tv" ItemsSource="{Binding}" Margin="0,50,0,100">

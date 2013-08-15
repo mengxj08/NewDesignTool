@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -22,6 +23,7 @@ namespace NewDesignTool.Pages
     public partial class Open : System.Windows.Controls.UserControl
     {
         private OpenFileDialog dialog;
+        private bool firstLoad = true;
 
         public Open()
         {
@@ -37,16 +39,30 @@ namespace NewDesignTool.Pages
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                //try
-                //{
-                    NewDesignTool.MainWindow.datas.ReadFromFile(dialog.FileName);
-                    //Log.getLogInstance().writeLog(dialog.FileName);
-                //}
-                //catch (Exception ex)
-                //{
-                //    Log.getLogInstance().writeLog("Error: Could not read file from disk. Original error: " + ex.Message);
-                //}
+                NewDesignTool.MainWindow.datas.ReadFromFile(dialog.FileName);
+
+                NewDesignTool.Pages.IDV.IDV_PAGE_FLAG = true;
+                NewDesignTool.Pages.DV.DV_PAGE_FLAG = true;
+                NewDesignTool.Pages.ArrangeConditions.AC_PAGE_FLAG = true;
+                NewDesignTool.Pages.RQ_list1.RQL1_PAGE_FLAG = true;
+                NewDesignTool.Pages.RQ_list2.RQL2_PAGE_FLAG = true;
+                NewDesignTool.Pages.RQ_list3.RQL3_PAGE_FLAG = true;
             }
+        }
+
+        private void OpenWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            //if (firstLoad)
+            //{
+            //    firstLoad = false;
+            //    //ButtonAutomationPeer peer = new ButtonAutomationPeer(OpenButton);
+            //    //IInvokeProvider invokeProv = peer.GetPattern(PatternInterface.Invoke) as 
+            //    OpenButton.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Button.ClickEvent));
+            //}
+            //else
+            //{
+            //    firstLoad = true;
+            //}
         }
     }
 }
