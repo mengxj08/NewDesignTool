@@ -11,9 +11,9 @@
             <Label Content="Experiment Name:" Canvas.Top="10" Height="24" Width="117"/>
             <Label Content="Author:" Canvas.Top="76" Height="24" Width="107"/>
             <Label Content="Description:" Canvas.Top="144" Height="24" Width="107"/>
-            <TextBox x:Name="RQ_experimentTitle" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="10" Text="{Binding Path=researchQuestion.experimentTitle, Mode=TwoWay}"/>
-            <TextBox x:Name="RQ_experimentConductor" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="144" Text="{Binding Path=researchQuestion.experimentConductor,Mode=TwoWay}"/>
-            <TextBox x:Name="RQ_experimentDescription" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="76" Text="{Binding Path=researchQuestion.experimentDescription,Mode=TwoWay}"/>
+            <TextBox x:Name="RQ_experimentTitle" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="10" Text="{Binding Path=researchQuestion.experimentTitle, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="RQ_experimentConductor" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="144" Text="{Binding Path=researchQuestion.experimentConductor,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="RQ_experimentDescription" Height="24" Canvas.Left="134" TextWrapping="Wrap" Width="305" Canvas.Top="76" Text="{Binding Path=researchQuestion.experimentDescription,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
         </Canvas>
     </Grid>
 </UserControl>

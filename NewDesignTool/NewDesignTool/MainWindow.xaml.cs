@@ -27,8 +27,8 @@ namespace NewDesignTool
         static public DataStructure datas = new DataStructure();
    
         private MODE modeType;
-
         private Boolean FLAG = true;
+
         public MainWindow()
         {
             InitializeComponent();

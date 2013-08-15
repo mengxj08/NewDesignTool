@@ -24,12 +24,14 @@ namespace NewDesignTool.Pages
         {
             InitializeComponent();
             //arrangement
+            /*
             NewDesignTool.MainWindow.datas.arrangement.minNum = 8;
             NewDesignTool.MainWindow.datas.arrangement.actualNum = 12;
             NewDesignTool.MainWindow.datas.arrangement.trial = 3;
             NewDesignTool.MainWindow.datas.arrangement.block = 2;
             NewDesignTool.MainWindow.datas.arrangement.timePerTrial = 30;
             NewDesignTool.MainWindow.datas.arrangement.feePerParticipant = 10;
+             */
             bindingProcess();
         }
         private void bindingProcess()

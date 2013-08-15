@@ -250,11 +250,57 @@ namespace NewDesignTool
         }
     }
 
-    public class ResearchQuestion
+    public class ResearchQuestion : ViewModelBase
     {
-        public string experimentTitle { get; set; }
-        public string experimentDescription { get; set; }
-        public string experimentConductor { get; set; }
+        private string _experimentTitle;
+        public string experimentTitle 
+        {
+            get
+            {
+                return this._experimentTitle;
+            }
+            set
+            {
+                if(value != this.experimentTitle)
+                {  
+                    this._experimentTitle = value;
+                    onPropertyChanged("experimentTitle");
+                }
+            }
+        }
+        private string _experimentDescription;
+        public string experimentDescription 
+        {
+            get
+            {
+                return this._experimentDescription;
+            }
+            set
+            {
+                if (value != this._experimentDescription)
+                {
+                    this._experimentDescription = value;
+                    onPropertyChanged("experimentDescription");
+                }
+            }
+        }
+
+        private string _experimentConductor;
+        public string experimentConductor 
+        {
+            get
+            {
+                return this._experimentConductor;
+            }
+            set
+            {
+                if (value != this.experimentConductor)
+                {
+                    this._experimentConductor = value;
+                    onPropertyChanged("experimentConductor");
+                }
+            }
+        }
         public Hypothesis hypothesis { get; set; }
 
         public ResearchQuestion()
@@ -262,12 +308,45 @@ namespace NewDesignTool
             hypothesis = new Hypothesis();
         }
 
-        public class Hypothesis
+        public class Hypothesis : ViewModelBase
         {
-            public string mainSolution { get; set; }
+            private string _mainSolution;
+            public string mainSolution 
+            {
+                get
+                {
+                    return this._mainSolution;
+                }
+                set
+                {
+                    if (value != this.mainSolution)
+                    {
+                        this._mainSolution = value;
+                        onPropertyChanged("mainSolution");
+                    }
+                }
+            }
+
             public ObservableCollection<String> compareSolutions { get; set; }
             public ObservableCollection<String> tasks { get; set; }
-            public string context { get; set; }
+
+            private string _context;
+            public string context 
+            {
+                get
+                {
+                    return this._context;
+                }
+                set
+                {
+                    if (value != this.context)
+                    {
+                        this._context = value;
+                        onPropertyChanged("context");
+                    }
+                }
+            }
+
             public ObservableCollection<String> measures { get; set; }
             public string targetPopulation { get; set; }
 
