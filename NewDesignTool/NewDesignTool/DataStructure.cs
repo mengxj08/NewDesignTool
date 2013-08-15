@@ -457,8 +457,20 @@ namespace NewDesignTool
         {
             levels = new ObservableCollection<Level>();
         }
+        public IndependentVariable(string IDVName)
+        {
+            this.name = IDVName;
+            levels = new ObservableCollection<Level>();
+        }
         public class Level : ViewModelBase
         {
+            public Level()
+            { 
+            }
+            public Level(string levelName)
+            {
+                this.name = levelName;
+            }
             private string _name;
             public string name
             {
@@ -480,6 +492,13 @@ namespace NewDesignTool
 
     public class DependentVariable : ViewModelBase
     {
+        public DependentVariable()
+        { 
+        }
+        public DependentVariable(string DVName)
+        {
+            this.name = DVName;
+        }
         private string _name;
         public string name 
         {

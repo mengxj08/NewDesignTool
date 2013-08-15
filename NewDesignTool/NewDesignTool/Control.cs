@@ -25,9 +25,30 @@ namespace NewDesignTool
         public void RQContributeToVariable()
         {
             //global::NewDesignTool.MODE NewDesignTool.MainWindow.modeTyp;
-            if (global::NewDesignTool.MainWindow.modeType == NewDesignTool.MODE.NewItem && FLAG)
+            if (NewDesignTool.MainWindow.modeType == NewDesignTool.MODE.NewItem && FLAG)
             {
- 
+                FLAG = false;
+
+                NewDesignTool.IndependentVariable suggest1 = new NewDesignTool.IndependentVariable("Technology");
+
+                suggest1.levels.Add(new NewDesignTool.IndependentVariable.Level(NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.mainSolution));
+                foreach(string temp in NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.compareSolutions)
+                {
+                    suggest1.levels.Add(new NewDesignTool.IndependentVariable.Level(temp));
+                }
+                NewDesignTool.MainWindow.datas.independentVariables.Add(suggest1);
+
+                NewDesignTool.IndependentVariable suggest2 = new NewDesignTool.IndependentVariable("Tasks");
+                foreach (string temp in NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.tasks)
+                {
+                    suggest2.levels.Add(new NewDesignTool.IndependentVariable.Level(temp));
+                }
+                NewDesignTool.MainWindow.datas.independentVariables.Add(suggest2);
+
+                foreach (string temp in NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.measures)
+                {
+                    NewDesignTool.MainWindow.datas.dependentVariables.Add(new NewDesignTool.DependentVariable(temp));
+                }
             }
             
         }
