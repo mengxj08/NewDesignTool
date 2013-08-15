@@ -5,12 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="750" d:DesignWidth="750">
     <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
-            <StackPanel MinWidth="200">
-                <TextBlock Text="This is block and trial page" />
-            </StackPanel>
-        </ScrollViewer>
+        <mui:ModernTab SelectedSource="/Pages/Estimate.xaml" Layout="List">
+            <mui:ModernTab.Links>
+                <mui:Link DisplayName="Estimate" Source="/Pages/Estimate.xaml" />
+                <mui:Link DisplayName="Balance" Source="/Pages/Balance.xaml" />
+                <mui:Link DisplayName="Visualization" Source="/Pages/Visualization.xaml" />
+            </mui:ModernTab.Links>
+        </mui:ModernTab>
     </Grid>
 </UserControl>

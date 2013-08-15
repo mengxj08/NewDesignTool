@@ -39,6 +39,8 @@ namespace NewDesignTool.Pages
             compareSolutions.DataContext = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis;
             measures.DataContext = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis;
             tasks.DataContext = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis;
+            mainSolution.DataContext = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis;
+            context.DataContext = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis;
         }
         private void Item_Add(object sender, RoutedEventArgs e)
         {
