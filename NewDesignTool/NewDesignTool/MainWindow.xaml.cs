@@ -28,7 +28,7 @@ namespace NewDesignTool
    
         private MODE modeType;
 
-        private Boolean FLAG = true;
+        //public static Boolean FLAG = false;
         public MainWindow()
         {
             InitializeComponent();

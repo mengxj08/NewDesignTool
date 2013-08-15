@@ -20,19 +20,15 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class DV : UserControl
     {
+        public static bool DV_PAGE_FLAG = false;
+
         public DV()
         {
             InitializeComponent();
-            //Dependent
-            //NewDesignTool.DependentVariable temp1 = new NewDesignTool.DependentVariable();
-            //temp1.name = "time cost";
-            //NewDesignTool.DependentVariable temp2 = new NewDesignTool.DependentVariable();
-            //temp2.name = "money cost";
-            //NewDesignTool.MainWindow.datas.dependentVariables.Add(temp1);
-            //NewDesignTool.MainWindow.datas.dependentVariables.Add(temp2);
-            bindingProcess();
+
+            BindingProcess();
         }
-        private void bindingProcess()
+        private void BindingProcess()
         {
             tv.DataContext = NewDesignTool.MainWindow.datas.dependentVariables;
         }
@@ -51,6 +47,15 @@ namespace NewDesignTool.Pages
             {
                 NewDesignTool.DependentVariable dv = (NewDesignTool.DependentVariable) tv.SelectedItem;
                 NewDesignTool.MainWindow.datas.dependentVariables.Remove(dv);
+            }
+        }
+
+        private void DVWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DV_PAGE_FLAG)
+            {
+                BindingProcess();
+                DV_PAGE_FLAG = false;
             }
         }
     }

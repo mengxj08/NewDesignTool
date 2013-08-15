@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="500"
+             Loaded="DVWindow_Loaded">
     <Grid Style="{StaticResource ContentRoot}" Margin="16,28,16,10">
         <TreeView Name="tv" Margin="0,50,0,100" ItemsSource="{Binding}">
             <TreeView.ItemTemplate>
