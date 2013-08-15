@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+
 namespace NewDesignTool
 {
     public class DataStructure
@@ -26,20 +27,19 @@ namespace NewDesignTool
         }
 
         // Construct from an existing xml file.
-        public DataStructure(String path)
+        public void ReadFromFile(String path)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(path);
 
             // Initiate research question.
-            XmlNode researchQuestionNode = doc.SelectSingleNode("/design_guide/research_question");
-            researchQuestion = new ResearchQuestion();
+            XmlNode researchQuestionNode = doc.SelectSingleNode("design_guide/research_question");
             researchQuestion.experimentTitle = researchQuestionNode.SelectSingleNode("experiment_title").InnerText;
             researchQuestion.experimentDescription = researchQuestionNode.SelectSingleNode("experiment_description").InnerText;
             researchQuestion.experimentConductor = researchQuestionNode.SelectSingleNode("experiment_conductor").InnerText;
-            researchQuestion.hypothesis.mainSolution = researchQuestionNode.SelectSingleNode("/hypothesis/main_solution").InnerText;
+            researchQuestion.hypothesis.mainSolution = researchQuestionNode.SelectSingleNode("hypothesis/main_solution").InnerText;
             // Initiate compare solutions.
-            XmlNode compareSolutionsNode = researchQuestionNode.SelectSingleNode("/hypothesis/compare_solutions");
+            XmlNode compareSolutionsNode = researchQuestionNode.SelectSingleNode("hypothesis/compare_solutions");
             XmlNodeList compareSolutionsNodeList = compareSolutionsNode.SelectNodes("compare_solution");
             foreach (XmlNode node in compareSolutionsNodeList)
             {
@@ -49,7 +49,7 @@ namespace NewDesignTool
                 researchQuestion.hypothesis.compareSolutions.Add(compareSolution);
             }
             // Initiate tasks.
-            XmlNode tasksNode = researchQuestionNode.SelectSingleNode("/hypothesis/tasks");
+            XmlNode tasksNode = researchQuestionNode.SelectSingleNode("hypothesis/tasks");
             XmlNodeList tasksNodeList = tasksNode.SelectNodes("task");
             foreach (XmlNode node in tasksNodeList)
             {
@@ -59,9 +59,9 @@ namespace NewDesignTool
                 researchQuestion.hypothesis.tasks.Add(task);
             }
             // Initiate context.
-            researchQuestion.hypothesis.context = researchQuestionNode.SelectSingleNode("/hypothesis/context").InnerText;
+            researchQuestion.hypothesis.context = researchQuestionNode.SelectSingleNode("hypothesis/context").InnerText;
             // Initiate measures.
-            XmlNode measuresNode = researchQuestionNode.SelectSingleNode("/hypothesis/measures");
+            XmlNode measuresNode = researchQuestionNode.SelectSingleNode("hypothesis/measures");
             XmlNodeList measuresNodeList = measuresNode.SelectNodes("measure");
             foreach (XmlNode node in measuresNodeList)
             {
@@ -71,11 +71,11 @@ namespace NewDesignTool
                 researchQuestion.hypothesis.measures.Add(measure);
             }
             // Initiate target population.
-            researchQuestion.hypothesis.targetPopulation = researchQuestionNode.SelectSingleNode("/hypothesis/target_population").InnerText;
+            researchQuestion.hypothesis.targetPopulation = researchQuestionNode.SelectSingleNode("hypothesis/target_population").InnerText;
             // End of initiating research question.
 
             // Initiate variables.
-            XmlNode variablesNode = doc.SelectSingleNode("/design_guide/variables");
+            XmlNode variablesNode = doc.SelectSingleNode("design_guide/variables");
             XmlNodeList ivNodeList = variablesNode.SelectNodes("independent_variable");
             foreach (XmlNode ivNode in ivNodeList)
             {
@@ -104,7 +104,7 @@ namespace NewDesignTool
             // End of initiating variables.
 
             // Initiate arrangement.
-            XmlNode arrangementNode = doc.SelectSingleNode("/design_guide/arrangement");
+            XmlNode arrangementNode = doc.SelectSingleNode("design_guide/arrangement");
             arrangement = new Arrangement();
             arrangement.minNum = Int32.Parse(arrangementNode.SelectSingleNode("min_number").InnerText);
             arrangement.actualNum = Int32.Parse(arrangementNode.SelectSingleNode("actual_number").InnerText);
@@ -273,6 +273,7 @@ namespace NewDesignTool
 
             public Hypothesis()
             {
+                mainSolution = " ";
                 compareSolutions = new ObservableCollection<String>();
                 tasks = new ObservableCollection<String>();
                 measures = new ObservableCollection<String>();

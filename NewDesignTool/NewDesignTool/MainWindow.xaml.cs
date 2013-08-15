@@ -20,12 +20,14 @@ namespace NewDesignTool
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    public enum MODE { NewItem, CopyItem };
+    public enum MODE { NewItem, OpenItem };
    
     public partial class MainWindow : ModernWindow
     {
         static public DataStructure datas = new DataStructure();
-        public MODE modeType;
+   
+        private MODE modeType;
+
         private Boolean FLAG = true;
         public MainWindow()
         {
@@ -34,7 +36,7 @@ namespace NewDesignTool
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
            modeType = MODE.NewItem;
-           BindingProcess();   
+           BindingProcess();
         }
         private void BindingProcess()
         { 

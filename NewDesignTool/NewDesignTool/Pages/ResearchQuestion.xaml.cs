@@ -22,14 +22,15 @@ namespace NewDesignTool.Pages
     {
         public ResearchQuestion()
         {
-            InitializeComponent();        
+            InitializeComponent();
+
+            //NewDesignTool.MainWindow.datas.researchQuestion.experimentTitle = "Ipod and Earpod";
+            //NewDesignTool.MainWindow.datas.researchQuestion.experimentConductor = "Sam";
+            //NewDesignTool.MainWindow.datas.researchQuestion.experimentDescription = "This is an experiment to compare different technologies.";
+            BindingProcess();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            NewDesignTool.MainWindow.datas.researchQuestion.experimentTitle = "Ipod and Earpod";
-            NewDesignTool.MainWindow.datas.researchQuestion.experimentConductor = "Sam";
-            NewDesignTool.MainWindow.datas.researchQuestion.experimentDescription = "This is an experiment to compare different technologies.";
-            BindingProcess();
         }
         private void BindingProcess()
         {
