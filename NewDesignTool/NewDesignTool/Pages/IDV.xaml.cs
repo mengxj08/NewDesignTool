@@ -23,46 +23,46 @@ namespace NewDesignTool.Pages
         public IDV()
         {
             InitializeComponent();
-            //Indpedent variables
-            NewDesignTool.MainWindow.datas.independentVariables.Add(new IndependentVariable());
-            NewDesignTool.MainWindow.datas.independentVariables.Add(new IndependentVariable());
-            NewDesignTool.MainWindow.datas.independentVariables.Add(new IndependentVariable());
+            ////Indpedent variables
+            //NewDesignTool.MainWindow.datas.independentVariables.Add(new IndependentVariable());
+            //NewDesignTool.MainWindow.datas.independentVariables.Add(new IndependentVariable());
+            //NewDesignTool.MainWindow.datas.independentVariables.Add(new IndependentVariable());
 
-            NewDesignTool.MainWindow.datas.independentVariables[0].name = "Factor1";
-            NewDesignTool.MainWindow.datas.independentVariables[1].name = "Factor2";
-            NewDesignTool.MainWindow.datas.independentVariables[2].name = "Factor3";
+            //NewDesignTool.MainWindow.datas.independentVariables[0].name = "Factor1";
+            //NewDesignTool.MainWindow.datas.independentVariables[1].name = "Factor2";
+            //NewDesignTool.MainWindow.datas.independentVariables[2].name = "Factor3";
 
-            NewDesignTool.MainWindow.datas.independentVariables[0].subjectDesign = SUBJECTDESIGN.Between;
-            NewDesignTool.MainWindow.datas.independentVariables[1].subjectDesign = SUBJECTDESIGN.Between;
-            NewDesignTool.MainWindow.datas.independentVariables[2].subjectDesign = SUBJECTDESIGN.Between;
+            //NewDesignTool.MainWindow.datas.independentVariables[0].subjectDesign = SUBJECTDESIGN.Between;
+            //NewDesignTool.MainWindow.datas.independentVariables[1].subjectDesign = SUBJECTDESIGN.Between;
+            //NewDesignTool.MainWindow.datas.independentVariables[2].subjectDesign = SUBJECTDESIGN.Between;
 
-            NewDesignTool.MainWindow.datas.independentVariables[0].counterBalance = COUNTERBALANCE.LatinSquare;
-            NewDesignTool.MainWindow.datas.independentVariables[1].counterBalance = COUNTERBALANCE.LatinSquare;
-            NewDesignTool.MainWindow.datas.independentVariables[2].counterBalance = COUNTERBALANCE.LatinSquare;
+            //NewDesignTool.MainWindow.datas.independentVariables[0].counterBalance = COUNTERBALANCE.LatinSquare;
+            //NewDesignTool.MainWindow.datas.independentVariables[1].counterBalance = COUNTERBALANCE.LatinSquare;
+            //NewDesignTool.MainWindow.datas.independentVariables[2].counterBalance = COUNTERBALANCE.LatinSquare;
 
-            NewDesignTool.MainWindow.datas.independentVariables[0].levels.Add(new NewDesignTool.IndependentVariable.Level());
-            NewDesignTool.MainWindow.datas.independentVariables[0].levels.Add(new NewDesignTool.IndependentVariable.Level());
-            NewDesignTool.MainWindow.datas.independentVariables[0].levels.Add(new NewDesignTool.IndependentVariable.Level());
-            NewDesignTool.MainWindow.datas.independentVariables[1].levels.Add(new NewDesignTool.IndependentVariable.Level());
-            NewDesignTool.MainWindow.datas.independentVariables[1].levels.Add(new NewDesignTool.IndependentVariable.Level());
-            NewDesignTool.MainWindow.datas.independentVariables[1].levels.Add(new NewDesignTool.IndependentVariable.Level());
-            NewDesignTool.MainWindow.datas.independentVariables[2].levels.Add(new NewDesignTool.IndependentVariable.Level());
-            NewDesignTool.MainWindow.datas.independentVariables[2].levels.Add(new NewDesignTool.IndependentVariable.Level());
-            NewDesignTool.MainWindow.datas.independentVariables[2].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[0].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[0].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[0].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[1].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[1].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[1].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[2].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[2].levels.Add(new NewDesignTool.IndependentVariable.Level());
+            //NewDesignTool.MainWindow.datas.independentVariables[2].levels.Add(new NewDesignTool.IndependentVariable.Level());
 
-            NewDesignTool.MainWindow.datas.independentVariables[0].levels[0].name = "Factor1_1";
-            NewDesignTool.MainWindow.datas.independentVariables[0].levels[1].name = "Factor1_2";
-            NewDesignTool.MainWindow.datas.independentVariables[0].levels[2].name = "Factor1_3";
-            //ewDesignTool.MainWindow.datas.independentVariables[0].levels[1].value = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.compareSolutions[0];
+            //NewDesignTool.MainWindow.datas.independentVariables[0].levels[0].name = "Factor1_1";
+            //NewDesignTool.MainWindow.datas.independentVariables[0].levels[1].name = "Factor1_2";
+            //NewDesignTool.MainWindow.datas.independentVariables[0].levels[2].name = "Factor1_3";
+            ////ewDesignTool.MainWindow.datas.independentVariables[0].levels[1].value = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.compareSolutions[0];
 
-            //NewDesignTool.MainWindow.datas.independentVariables[1].levels[0].value = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.context;
-            NewDesignTool.MainWindow.datas.independentVariables[1].levels[0].name = "Quiet environment";
-            NewDesignTool.MainWindow.datas.independentVariables[1].levels[1].name = "Noisy environment"; 
-            NewDesignTool.MainWindow.datas.independentVariables[1].levels[2].name = "Random";
-            //NewDesignTool.MainWindow.datas.independentVariables[2].levels[0].value = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.tasks[0];
-            NewDesignTool.MainWindow.datas.independentVariables[2].levels[0].name = "Multi Tasks";
-            NewDesignTool.MainWindow.datas.independentVariables[2].levels[1].name = "Single Tasks";
-            NewDesignTool.MainWindow.datas.independentVariables[2].levels[2].name = "No Tasks";
+            ////NewDesignTool.MainWindow.datas.independentVariables[1].levels[0].value = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.context;
+            //NewDesignTool.MainWindow.datas.independentVariables[1].levels[0].name = "Quiet environment";
+            //NewDesignTool.MainWindow.datas.independentVariables[1].levels[1].name = "Noisy environment"; 
+            //NewDesignTool.MainWindow.datas.independentVariables[1].levels[2].name = "Random";
+            ////NewDesignTool.MainWindow.datas.independentVariables[2].levels[0].value = NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.tasks[0];
+            //NewDesignTool.MainWindow.datas.independentVariables[2].levels[0].name = "Multi Tasks";
+            //NewDesignTool.MainWindow.datas.independentVariables[2].levels[1].name = "Single Tasks";
+            //NewDesignTool.MainWindow.datas.independentVariables[2].levels[2].name = "No Tasks";
             bindingPorcess();
         }
         private void bindingPorcess()
