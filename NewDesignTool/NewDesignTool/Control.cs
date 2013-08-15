@@ -9,6 +9,7 @@ namespace NewDesignTool
     class Control
     {
         private static Control control;
+        private Boolean FLAG = true;
         private Control()
         {
            
@@ -23,11 +24,12 @@ namespace NewDesignTool
         }
         public void RQContributeToVariable()
         {
-            /*
-            if (NewDesignTool.MainWindow.modeType == NewDesignTool.MODE.NewItem)
-            { 
+            //global::NewDesignTool.MODE NewDesignTool.MainWindow.modeTyp;
+            if (global::NewDesignTool.MainWindow.modeType == NewDesignTool.MODE.NewItem && FLAG)
+            {
+ 
             }
-             * */
+            
         }
     }
 }

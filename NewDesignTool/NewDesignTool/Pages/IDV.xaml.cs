@@ -69,6 +69,10 @@ namespace NewDesignTool.Pages
         {
             this.tv.DataContext = NewDesignTool.MainWindow.datas.independentVariables;
         }
+        private void IDV_PageLoaded(object sender, RoutedEventArgs e)
+        {
+
+        }
         private void del_item(object sender, RoutedEventArgs e)
         {
             if (tv.SelectedItem != null)
