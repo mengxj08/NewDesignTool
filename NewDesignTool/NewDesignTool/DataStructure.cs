@@ -29,7 +29,7 @@ namespace NewDesignTool
         // Construct from an existing xml file.
         public void ReadFromFile(String path)
         {
-            Clear();
+            //Clear();
 
             XmlDocument doc = new XmlDocument();
             doc.Load(path);
