@@ -288,7 +288,7 @@ namespace NewDesignTool
             }
             set
             {
-                if (value != this._experimentDescription)
+                if (value != this.experimentDescription)
                 {
                     this._experimentDescription = value;
                     onPropertyChanged("experimentDescription");
