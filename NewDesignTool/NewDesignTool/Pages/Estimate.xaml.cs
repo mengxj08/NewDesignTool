@@ -20,21 +20,15 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class Estimate : UserControl
     {
+        public static bool ESTIMATE_PAGE_FLAG = false;
+
         public Estimate()
         {
             InitializeComponent();
-            //arrangement
-            /*
-            NewDesignTool.MainWindow.datas.arrangement.minNum = 8;
-            NewDesignTool.MainWindow.datas.arrangement.actualNum = 12;
-            NewDesignTool.MainWindow.datas.arrangement.trial = 3;
-            NewDesignTool.MainWindow.datas.arrangement.block = 2;
-            NewDesignTool.MainWindow.datas.arrangement.timePerTrial = 30;
-            NewDesignTool.MainWindow.datas.arrangement.feePerParticipant = 10;
-             */
-            bindingProcess();
+
+            BindingProcess();
         }
-        private void bindingProcess()
+        private void BindingProcess()
         {
             trial.DataContext = NewDesignTool.MainWindow.datas.arrangement;
             block.DataContext = NewDesignTool.MainWindow.datas.arrangement;
@@ -44,6 +38,15 @@ namespace NewDesignTool.Pages
             feePerParticipant.DataContext = NewDesignTool.MainWindow.datas.arrangement;
             totalpayment.DataContext = NewDesignTool.MainWindow.datas.arrangement;
             totaltimecost.DataContext = NewDesignTool.MainWindow.datas.arrangement;
+        }
+
+        private void EstimateWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (ESTIMATE_PAGE_FLAG)
+            {
+                BindingProcess();
+                ESTIMATE_PAGE_FLAG = false;
+            }
         }
     }
 }
