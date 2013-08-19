@@ -108,7 +108,6 @@ namespace NewDesignTool
 
             // Initiate arrangement.
             XmlNode arrangementNode = doc.SelectSingleNode("design_guide/arrangement");
-            arrangement = new Arrangement();
             arrangement.minNum = Int32.Parse(arrangementNode.SelectSingleNode("min_number").InnerText);
             arrangement.actualNum = Int32.Parse(arrangementNode.SelectSingleNode("actual_number").InnerText);
             arrangement.feePerParticipant = Int32.Parse(arrangementNode.SelectSingleNode("fee_per_participant").InnerText);
@@ -129,10 +128,19 @@ namespace NewDesignTool
 
         private void Clear()
         {
-            researchQuestion = new ResearchQuestion();
-            arrangement = new Arrangement();
-            independentVariables = new ObservableCollection<IndependentVariable>();
-            dependentVariables = new ObservableCollection<DependentVariable>();
+            //researchQuestion = new ResearchQuestion();
+            //arrangement = new Arrangement();
+            //independentVariables = new ObservableCollection<IndependentVariable>();
+            //dependentVariables = new ObservableCollection<DependentVariable>();
+
+            NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.compareSolutions.Clear();
+            NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.measures.Clear();
+            NewDesignTool.MainWindow.datas.researchQuestion.hypothesis.tasks.Clear();
+
+            NewDesignTool.MainWindow.datas.independentVariables.Clear();
+            NewDesignTool.MainWindow.datas.dependentVariables.Clear();
+
+            NewDesignTool.MainWindow.datas.arrangement.participants.Clear();
         }
 
         // Store to an xml file.
@@ -540,6 +548,7 @@ namespace NewDesignTool
                 this._actualNum = value;
                 this.totalPayment = this.feePerParticipant * this.actualNum;
                 this.onPropertyChanged("totalPayment");
+                this.onPropertyChanged("actualNum");
                 //Log.getLogInstance().writeLog("actualNum");
             } 
         }
@@ -555,6 +564,7 @@ namespace NewDesignTool
             {
                 this._feePerParticipant = value;
                 this.totalPayment = this._feePerParticipant * this.actualNum;
+                this.onPropertyChanged("feePerParticipant");
                 this.onPropertyChanged("totalPayment");
                 //Log.getLogInstance().writeLog("Test");
             }
@@ -570,6 +580,7 @@ namespace NewDesignTool
             {
                 this._trial = value;
                 this.totalTimeCost = this.trial * this.block * this.timePerTrial * this.actualNum / 60;
+                this.onPropertyChanged("trial");
                 this.onPropertyChanged("totalTimeCost");
             } 
         }
@@ -584,7 +595,9 @@ namespace NewDesignTool
             {
                 this._timePerTrial = value;
                 this.totalTimeCost = this.trial * this.block * this.timePerTrial * this.actualNum / 60;
+                this.onPropertyChanged("timePerTrial");
                 this.onPropertyChanged("totalTimeCost");
+               
             }
         }
         private int _block;
@@ -599,6 +612,7 @@ namespace NewDesignTool
                 this._block = value;
                 this.totalTimeCost = this.trial * this.block * this.timePerTrial * this.actualNum / 60;
                 this.onPropertyChanged("totalTimeCost");
+                this.onPropertyChanged("block");
             }
         }
         

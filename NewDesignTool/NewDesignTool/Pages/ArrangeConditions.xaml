@@ -7,8 +7,7 @@
              xmlns:assembly="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:NewDesignTool" 
              mc:Ignorable="d" 
-             d:DesignHeight="750" d:DesignWidth="750"
-             Loaded="ACWindow_Loaded">
+             d:DesignHeight="750" d:DesignWidth="750">
     <UserControl.Resources>
         <ObjectDataProvider x:Key="SubjectTypes" MethodName="GetValues" ObjectType="{x:Type assembly:Enum}">
             <ObjectDataProvider.MethodParameters>

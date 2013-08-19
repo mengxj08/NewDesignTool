@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500"
-             Loaded="RQL2Window_Loaded">
+             d:DesignHeight="500" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}">
         <Canvas x:Name="canvas_RQ2">
             <Label Content="Experiment Name:" Canvas.Top="10" Height="24" Width="117"/>

@@ -23,18 +23,10 @@ namespace NewDesignTool.Pages
         public Estimate()
         {
             InitializeComponent();
-            //arrangement
-            /*
-            NewDesignTool.MainWindow.datas.arrangement.minNum = 8;
-            NewDesignTool.MainWindow.datas.arrangement.actualNum = 12;
-            NewDesignTool.MainWindow.datas.arrangement.trial = 3;
-            NewDesignTool.MainWindow.datas.arrangement.block = 2;
-            NewDesignTool.MainWindow.datas.arrangement.timePerTrial = 30;
-            NewDesignTool.MainWindow.datas.arrangement.feePerParticipant = 10;
-             */
-            bindingProcess();
+
+            BindingProcess();
         }
-        private void bindingProcess()
+        private void BindingProcess()
         {
             trial.DataContext = NewDesignTool.MainWindow.datas.arrangement;
             block.DataContext = NewDesignTool.MainWindow.datas.arrangement;
@@ -45,5 +37,6 @@ namespace NewDesignTool.Pages
             totalpayment.DataContext = NewDesignTool.MainWindow.datas.arrangement;
             totaltimecost.DataContext = NewDesignTool.MainWindow.datas.arrangement;
         }
+
     }
 }
