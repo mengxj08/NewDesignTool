@@ -20,7 +20,6 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class RQ_list2 : UserControl
     {
-        public static bool RQL2_PAGE_FLAG = false;
 
         public RQ_list2()
         {
@@ -34,13 +33,5 @@ namespace NewDesignTool.Pages
             this.RQ_experimentDescription.DataContext = NewDesignTool.MainWindow.datas;
         }
 
-        private void RQL2Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (RQL2_PAGE_FLAG)
-            {
-                BindingProcess();
-                RQL2_PAGE_FLAG = false;
-            }
-        }
     }
 }

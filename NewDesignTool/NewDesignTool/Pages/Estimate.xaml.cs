@@ -20,8 +20,6 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class Estimate : UserControl
     {
-        public static bool ESTIMATE_PAGE_FLAG = false;
-
         public Estimate()
         {
             InitializeComponent();
@@ -40,13 +38,5 @@ namespace NewDesignTool.Pages
             totaltimecost.DataContext = NewDesignTool.MainWindow.datas.arrangement;
         }
 
-        private void EstimateWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (ESTIMATE_PAGE_FLAG)
-            {
-                BindingProcess();
-                ESTIMATE_PAGE_FLAG = false;
-            }
-        }
     }
 }

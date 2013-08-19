@@ -20,8 +20,6 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class ArrangeConditions : UserControl
     {
-        public static bool AC_PAGE_FLAG = false;
-
         public ArrangeConditions()
         {
             InitializeComponent();
@@ -31,15 +29,6 @@ namespace NewDesignTool.Pages
         {
             datagrid.DataContext = NewDesignTool.MainWindow.datas.independentVariables;
            
-        }
-
-        private void ACWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (AC_PAGE_FLAG)
-            {
-                BindingProcess();
-                AC_PAGE_FLAG = false;
-            }
         }
     }
 }

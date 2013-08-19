@@ -39,7 +39,7 @@ namespace NewDesignTool.Pages
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                NewDesignTool.MainWindow.datas = new DataStructure();
+                //NewDesignTool.MainWindow.datas = new DataStructure();
                 NewDesignTool.MainWindow.datas.ReadFromFile(dialog.FileName);
                 /*
                 NewDesignTool.Pages.IDV.IDV_PAGE_FLAG = true;
