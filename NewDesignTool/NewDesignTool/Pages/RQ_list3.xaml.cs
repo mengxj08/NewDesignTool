@@ -20,7 +20,6 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class RQ_list3 : UserControl
     {
-        public static bool RQL3_PAGE_FLAG = false;
 
         public RQ_list3()
         {
@@ -91,13 +90,5 @@ namespace NewDesignTool.Pages
             checkbox2.IsChecked = false;
         }
 
-        private void RQL3Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (RQL3_PAGE_FLAG)
-            {
-                BindingProcess();
-                RQL3_PAGE_FLAG = false;
-            }
-        }
     }
 }

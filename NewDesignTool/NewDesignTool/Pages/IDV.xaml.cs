@@ -20,8 +20,6 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class IDV : UserControl
     {
-        public static bool IDV_PAGE_FLAG = false;
-
         public IDV()
         {
             InitializeComponent();
@@ -83,15 +81,6 @@ namespace NewDesignTool.Pages
                 else 
                 { 
                 }
-            }
-        }
-
-        private void IDVWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (IDV_PAGE_FLAG)
-            {
-                BindingProcess();
-                IDV_PAGE_FLAG = false;
             }
         }
 

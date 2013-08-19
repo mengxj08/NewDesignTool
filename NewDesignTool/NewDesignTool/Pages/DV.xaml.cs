@@ -20,8 +20,6 @@ namespace NewDesignTool.Pages
     /// </summary>
     public partial class DV : UserControl
     {
-        public static bool DV_PAGE_FLAG = false;
-
         public DV()
         {
             InitializeComponent();
@@ -50,13 +48,5 @@ namespace NewDesignTool.Pages
             }
         }
 
-        private void DVWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (DV_PAGE_FLAG)
-            {
-                BindingProcess();
-                DV_PAGE_FLAG = false;
-            }
-        }
     }
 }

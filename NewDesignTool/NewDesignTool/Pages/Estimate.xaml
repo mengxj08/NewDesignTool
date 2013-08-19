@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500"
-             Loaded="EstimateWindow_Loaded">
+             d:DesignHeight="500" d:DesignWidth="500">
     <Grid Style="{StaticResource ContentRoot}">
         <Label Content="No. of trials per condition:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="215" FontSize="16"/>
         <Label Content="No. of blocks per participant:" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="215" FontSize="16"/>
