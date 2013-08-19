@@ -41,7 +41,7 @@ namespace NewDesignTool.Pages
             {
                 NewDesignTool.MainWindow.datas = new DataStructure();
                 NewDesignTool.MainWindow.datas.ReadFromFile(dialog.FileName);
-
+                /*
                 NewDesignTool.Pages.IDV.IDV_PAGE_FLAG = true;
                 NewDesignTool.Pages.DV.DV_PAGE_FLAG = true;
                 NewDesignTool.Pages.ArrangeConditions.AC_PAGE_FLAG = true;
@@ -49,6 +49,7 @@ namespace NewDesignTool.Pages
                 NewDesignTool.Pages.RQ_list2.RQL2_PAGE_FLAG = true;
                 NewDesignTool.Pages.RQ_list3.RQL3_PAGE_FLAG = true;
                 NewDesignTool.Pages.Estimate.ESTIMATE_PAGE_FLAG = true;
+                 * */
             }
         }
 
