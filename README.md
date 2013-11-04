@@ -10,5 +10,6 @@ The related project: [MahApps.Mero](http://mahapps.com/MahApps.Metro/)
 
 ## Screentshots:
 ![Screentshot1](/screenshot1.png)
-
+-------------------------------------------------------------------------------------
 ![Screentshot2](/screenshot2.png)
+-------------------------------------------------------------------------------------
