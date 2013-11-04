@@ -9,6 +9,6 @@ The dependent source code is:[Modern UI 1.0.5](https://mui.codeplex.com/wikipage
 The related project: [MahApps.Mero](http://mahapps.com/MahApps.Metro/)
 
 ## Screentshots:
-![Screentshot1](/screentshot1.png)
+![Screentshot1](/screenshot1.png)
 
-![Screentshot2](/screentshot2.png)
+![Screentshot2](/screenshot2.png)
