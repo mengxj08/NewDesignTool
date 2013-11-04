@@ -1,14 +1,12 @@
 NewDesignTool
 =============
 
-The new design tool with modern UI Application
+### The new design tool with modern UI Application
 
-Information:
-The dependent source code is: Modern UI 1.0.5
-https://mui.codeplex.com/wikipage?title=screenshots&referringTitle=Home
+The dependent source code is:[Modern UI 1.0.5](https://mui.codeplex.com/wikipage?title=screenshots&referringTitle=Home)
 
-The related project: MahApps.Mero
-http://mahapps.com/MahApps.Metro/
+![Modern UI](/http://i.stack.imgur.com/r2hzW.png)
 
-Edited:
-8/13/2013 11:18 AM
+The related project: [MahApps.Mero](http://mahapps.com/MahApps.Metro/)
+
+![Mahapps.metro](/http://mahapps.com/MahApps.Metro/images/include_prerelease.png)
